@@ -27,7 +27,8 @@ public class SpellChecker {
 			int n1 = levenshtein(tail(word1), word2);
 			int n2 = levenshtein(word1, tail(word2));
 			int n3 = levenshtein(tail(word1), tail(word2));
-			return 1 + Math.min(Math.min(n1, n2), n3);
+			int min = Math.min(Math.min(n1, n2), n3);
+			return 1 + min;
 		}
 
 	}
@@ -44,9 +45,7 @@ public class SpellChecker {
 		int min = word.length();
 		String similar = "";
 		for (int i = 0; i < dictionary.length; i++) {
-			if (levenshtein(word, dictionary[i]) > min)
-				;
-			{
+			if (levenshtein(word, dictionary[i]) > min) {
 				min = levenshtein(word, dictionary[i]);
 				similar = dictionary[i];
 			}
