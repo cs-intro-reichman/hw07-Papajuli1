@@ -45,8 +45,8 @@ public class SpellChecker {
 		int min = word.length();
 		word = word.toLowerCase();
 		String similar = "";
-		for (int i = 1; i < dictionary.length; i++) {
-			if (levenshtein(word, dictionary[i]) > min) {
+		for (int i = 0; i < dictionary.length; i++) {
+			if (levenshtein(word, dictionary[i]) < min) {
 				min = levenshtein(word, dictionary[i]);
 				similar = dictionary[i];
 			}
