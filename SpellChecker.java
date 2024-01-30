@@ -43,7 +43,7 @@ public class SpellChecker {
 
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 		int min = word.length();
-		word = word.toLowerCase();
+		// word = word.toLowerCase();
 		String similar = "";
 		for (int i = 0; i < dictionary.length; i++) {
 			if (levenshtein(word, dictionary[i]) < min) {
