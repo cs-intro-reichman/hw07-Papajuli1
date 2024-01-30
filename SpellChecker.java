@@ -27,7 +27,7 @@ public class SpellChecker {
 			int n1 = levenshtein(tail(word1), word2);
 			int n2 = levenshtein(word1, tail(word2));
 			int n3 = levenshtein(tail(word1), tail(word2));
-			return Math.min(Math.min(n1, n2), n3);
+			return 1 + Math.min(Math.min(n1, n2), n3);
 		}
 
 	}
