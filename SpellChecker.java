@@ -18,9 +18,9 @@ public class SpellChecker {
 
 	public static int levenshtein(String word1, String word2) {
 		if (word1.length() == 0)
-			return word1.length();
-		if (word2.length() == 0)
 			return word2.length();
+		if (word2.length() == 0)
+			return word1.length();
 		if (word1.charAt(0) == word2.charAt(0))
 			return levenshtein(tail(word1), tail(word2));
 		else {
